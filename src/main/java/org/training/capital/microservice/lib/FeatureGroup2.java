@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class FeatureGroup2 {
 
     @Bean
-    public Feature3 feature1(){
+    public Feature3 feature3(){
         return new Feature3();
     }
 
