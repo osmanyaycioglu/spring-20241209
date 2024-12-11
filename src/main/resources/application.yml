@@ -39,6 +39,9 @@ my:
         - name: istanbulloc
           number: 4236543657
       watchdog-period: 5s
+
+  condition:
+    test: in
 server:
   error:
     include-binding-errors: always
@@ -48,3 +51,7 @@ server:
 spring:
   application:
     name: spring-20241209
+  profiles:
+    active: live
+    default: live
+
