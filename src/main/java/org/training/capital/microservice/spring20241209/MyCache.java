@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.RequestScope;
 // myCache --> camel
 // my_cache --> snake
 // my-cache --> kebap
