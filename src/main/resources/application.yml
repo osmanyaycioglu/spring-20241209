@@ -1,0 +1,50 @@
+app:
+  language: tr
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    env:
+      show-values: always
+my:
+  virtual:
+    app:
+      app-name: training1
+      app-version: 1.0.0
+      dynamic-socket-end: 10000
+      dynamic-socket-start: 9000
+      extra-props:
+        city: istanbul
+        location: istanbul
+        rule: rule1
+      initial-wait: 100
+      locations:
+        - istanbul
+        - ankara
+        - izmir
+      phone-map:
+        ankNum:
+          name: ankaraloc
+          number: 32483247
+        istNum:
+          name: istanbulloc
+          number: 213478231
+      phones:
+        - name: izmirloc
+          number: 12837492137
+        - name: ankaraloc
+          number: 32847234
+        - name: istanbulloc
+          number: 4236543657
+      watchdog-period: 5s
+server:
+  error:
+    include-binding-errors: always
+    include-exception: true
+    include-message: always
+  port: 8088
+spring:
+  application:
+    name: spring-20241209
