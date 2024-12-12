@@ -1,10 +1,12 @@
 package org.training.capital.microservice.spring20241209.sevices.models;
 
 import jakarta.validation.constraints.*;
+import lombok.Data;
 import org.training.capital.microservice.spring20241209.rest.validation.CheckNotAllowedWords;
 
 import java.time.ZonedDateTime;
 
+@Data
 public class Employee {
     private String name;
     @NotEmpty
