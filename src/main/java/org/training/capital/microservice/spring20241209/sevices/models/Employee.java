@@ -1,13 +1,22 @@
 package org.training.capital.microservice.spring20241209.sevices.models;
 
-import jakarta.validation.constraints.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import org.training.capital.microservice.spring20241209.rest.validation.CheckNotAllowedWords;
 
 import java.time.ZonedDateTime;
 
+@Entity
 @Data
 public class Employee {
+    @Id
+    @GeneratedValue
+    private Long employeeId;
     private String name;
     @NotEmpty
     private String surname;
