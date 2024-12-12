@@ -1,8 +1,6 @@
 package org.training.capital.microservice.spring20241209.sevices.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -10,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -32,4 +31,10 @@ public class Employee {
     private EEmployeeStatus employeeStatus;
     private ZonedDateTime creationTime;
     private ZonedDateTime updateTime;
+
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private EmployeeExtra employeeExtra;
+
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<EmployeePhone> employeePhones;
 }

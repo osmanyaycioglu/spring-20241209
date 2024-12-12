@@ -4,6 +4,8 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.training.capital.microservice.spring20241209.rest.validation.CheckNotAllowedWords;
 
+import java.util.List;
+
 @Data
 public class EmployeeDto {
     @NotBlank
@@ -24,6 +26,10 @@ public class EmployeeDto {
     @Max(300)
     @Min(50)
     private Integer height;
+
+    private EmployeeExtraDto extra;
+
+    private List<EmployeePhoneDto> employeePhones;
 
 
 }
