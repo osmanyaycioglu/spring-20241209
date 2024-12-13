@@ -11,6 +11,7 @@ import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 import org.training.capital.microservice.spring20241209.ICache;
+import org.training.capital.microservice.spring20241209.aop.MyTrace;
 import org.training.capital.microservice.spring20241209.rest.mappers.IEmployeeMapper;
 import org.training.capital.microservice.spring20241209.rest.models.AddEmployeeResponse;
 import org.training.capital.microservice.spring20241209.rest.models.EmployeeDto;
@@ -26,6 +27,7 @@ import org.training.capital.microservice.spring20241209.sevices.EmployeeProvisio
 public class EmployeeProvisionRestController implements IEmployeeProvisionRestController {
     private final EmployeeProvisionService employeeProvisionService;
 
+    @MyTrace("add employee")
     @PostMapping("/add")
     public AddEmployeeResponse addEmployee(@Valid @RequestBody EmployeeDto employeeDtoParam) {
         employeeProvisionService.addEmployee(IEmployeeMapper.EMPLOYEE_MAPPER.toEmployee(employeeDtoParam));

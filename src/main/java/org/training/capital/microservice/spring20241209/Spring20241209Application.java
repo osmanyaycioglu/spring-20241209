@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -16,6 +17,7 @@ import org.training.capital.microservice.spring20241209.interfaces.IHello;
 
 @EnableScheduling
 @EnableAsync
+@EnableAspectJAutoProxy
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages = {"org.training.capital.microservice.spring20241209",
 //                                           "org.training.capital.microservice.lib"

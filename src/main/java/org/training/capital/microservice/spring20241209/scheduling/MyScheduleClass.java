@@ -12,7 +12,7 @@ public class MyScheduleClass {
     public void abc() {
         System.out.println("schedule run : " + count++);
         try {
-            Thread.sleep(10000);
+            Thread.sleep(100);
         } catch (InterruptedException eParam) {
         }
     }

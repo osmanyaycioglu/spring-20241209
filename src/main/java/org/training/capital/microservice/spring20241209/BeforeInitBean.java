@@ -74,7 +74,7 @@ public class BeforeInitBean implements CommandLineRunner {
         Future<String> stringFutureLoc = myAsyncBean.myAsync("test");
         System.out.println("Called async  : " + Thread.currentThread().getName());
 //        stringFutureLoc.isDone();
-        String sLoc = stringFutureLoc.get();
+        // String sLoc = stringFutureLoc.get();
 //        String sLoc1 = stringFutureLoc.get(20_000,
 //                                           TimeUnit.MILLISECONDS);
 
