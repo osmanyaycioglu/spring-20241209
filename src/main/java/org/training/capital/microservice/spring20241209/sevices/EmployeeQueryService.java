@@ -16,4 +16,8 @@ public class EmployeeQueryService {
     public List<Employee> getAllEmployees(){
         return employeeProvisionDao.getAllEmployee();
     }
+
+    public List<Employee> getAllEmployeesByName(final String nameParam) {
+        return employeeProvisionDao.findByName(nameParam);
+    }
 }
