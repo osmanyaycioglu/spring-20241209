@@ -7,11 +7,15 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.training.capital.microservice.lib.Feature2;
 import org.training.capital.microservice.lib.FeatureGroup1;
 import org.training.capital.microservice.lib.FeatureGroup2;
 import org.training.capital.microservice.spring20241209.interfaces.IHello;
 
+@EnableScheduling
+@EnableAsync
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages = {"org.training.capital.microservice.spring20241209",
 //                                           "org.training.capital.microservice.lib"

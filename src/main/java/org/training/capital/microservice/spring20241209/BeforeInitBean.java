@@ -5,8 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.training.capital.microservice.spring20241209.async.MyAsyncBean;
 import org.training.capital.microservice.spring20241209.interfaces.IHello;
 import org.training.capital.microservice.spring20241209.interfaces.MyOtherScopeObject;
+
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class BeforeInitBean implements CommandLineRunner {
@@ -29,6 +33,9 @@ public class BeforeInitBean implements CommandLineRunner {
 
     @Autowired
     private MyOtherScopeObject otherScopeObject3;
+
+    @Autowired
+    private MyAsyncBean myAsyncBean;
 
     // Constructor Injection
     // @Autowired
@@ -62,6 +69,14 @@ public class BeforeInitBean implements CommandLineRunner {
         System.out.println("Object 1 : " + otherScopeObject1.getCount());
         System.out.println("Object 2 : " + otherScopeObject2.getCount());
         System.out.println("Object 3 : " + otherScopeObject3.getCount());
+
+        System.out.println("Calling async  : " + Thread.currentThread().getName());
+        Future<String> stringFutureLoc = myAsyncBean.myAsync("test");
+        System.out.println("Called async  : " + Thread.currentThread().getName());
+//        stringFutureLoc.isDone();
+        String sLoc = stringFutureLoc.get();
+//        String sLoc1 = stringFutureLoc.get(20_000,
+//                                           TimeUnit.MILLISECONDS);
 
     }
 }

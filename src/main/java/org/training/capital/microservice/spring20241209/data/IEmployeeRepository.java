@@ -6,12 +6,13 @@ import org.springframework.data.repository.query.Param;
 import org.training.capital.microservice.spring20241209.sevices.models.Employee;
 
 import java.util.List;
+import java.util.concurrent.Future;
 
 // @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee, Long> {
     // select * from employee e where e.name=? order by e.surname
     // select e from Employee e where e.name=? order by e.surname
-    List<Employee> findByNameOrderBySurname(String name);
+    Future<List<Employee>> findByNameOrderBySurname(String name);
 
     List<Employee> findByHeightBetweenAndWeightBetween(Integer minH,
                                                        Integer maxH,
